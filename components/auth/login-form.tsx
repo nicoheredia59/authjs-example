@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import AuthError from './auth-error'
@@ -17,7 +18,9 @@ export default function LoginForm() {
     <div>
       <div className="flex flex-col gap-y-4">
         <Social />
-        <AuthError message={urlError} />
+        <Suspense>
+          <AuthError message={urlError} />
+        </Suspense>
       </div>
     </div>
   )
