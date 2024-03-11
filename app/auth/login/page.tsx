@@ -11,24 +11,26 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div>
-      <section className="flex flex-col items-center gap-y-8">
-        <header className="">
-          <h1 className="mb-4 text-2xl font-semibold text-zinc-900">
-            Auth.js exmaple - Login
-          </h1>
-          <p className="text-zinc-600" style={{ maxWidth: '45ch' }}>
-            Welcome back. Let&apos;s conquer your day.
-          </p>
-        </header>
-        <LoginForm />
-        <footer className="flex flex-col gap-y-6">
-          <span className="text-zinc-600">
-            Don&apos;t have an account yet?{' '}
-            <AuthPageLink href={'/auth/register'} label="Sign Up" />
-          </span>
-        </footer>
-      </section>
-    </div>
+    <React.Suspense>
+      <div>
+        <section className="flex flex-col items-center gap-y-8">
+          <header className="">
+            <h1 className="mb-4 text-2xl font-semibold text-zinc-900">
+              Auth.js exmaple - Login
+            </h1>
+            <p className="text-zinc-600" style={{ maxWidth: '45ch' }}>
+              Welcome back. Let&apos;s conquer your day.
+            </p>
+          </header>
+          <LoginForm />
+          <footer className="flex flex-col gap-y-6">
+            <span className="text-zinc-600">
+              Don&apos;t have an account yet?{' '}
+              <AuthPageLink href={'/auth/register'} label="Sign Up" />
+            </span>
+          </footer>
+        </section>
+      </div>
+    </React.Suspense>
   )
 }
