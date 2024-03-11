@@ -19,23 +19,25 @@ export default function Social() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-y-4">
-      <span className="flex w-full flex-col items-center gap-y-4">
-        <button
-          onClick={() => handleLogin('github')}
-          className="inline-flex w-full items-center justify-center gap-x-3 rounded-md border border-zinc-900 p-2 px-4"
-        >
-          Sign in with Github
-          <FaGithub size={24} />
-        </button>
-        <button
-          onClick={() => handleLogin('google')}
-          className="inline-flex w-full items-center justify-center gap-x-3 rounded-md border border-zinc-900 p-2 px-4"
-        >
-          Sign in with Google
-          <FcGoogle size={24} />
-        </button>
-      </span>
-    </div>
+    <React.Suspense>
+      <div className="flex flex-col items-center justify-center gap-y-4">
+        <span className="flex w-full flex-col items-center gap-y-4">
+          <button
+            onClick={() => handleLogin('github')}
+            className="inline-flex w-full items-center justify-center gap-x-3 rounded-md border border-zinc-900 p-2 px-4"
+          >
+            Sign in with Github
+            <FaGithub size={24} />
+          </button>
+          <button
+            onClick={() => handleLogin('google')}
+            className="inline-flex w-full items-center justify-center gap-x-3 rounded-md border border-zinc-900 p-2 px-4"
+          >
+            Sign in with Google
+            <FcGoogle size={24} />
+          </button>
+        </span>
+      </div>
+    </React.Suspense>
   )
 }
